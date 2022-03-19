@@ -32,6 +32,7 @@ public class EnnemyBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerIntrication>().intrication -= damage;
+            print("JETENIQUE");
         }
     }
 
