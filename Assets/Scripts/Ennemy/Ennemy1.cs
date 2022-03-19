@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ennemy1Behavior : MonoBehaviour
+public class Ennemy1: MonoBehaviour
 {
     
     [SerializeField] int nbOfCase;

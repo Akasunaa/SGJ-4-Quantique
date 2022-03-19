@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     bool canMove;
     float time;
     float tempo=1f;
-    float intrication = 1;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,13 +32,17 @@ public class PlayerMovement : MonoBehaviour
             v_input = 0;
             time = time % tempo;
         }
-             
+
         //GetInput();
         //Deplacement();
-        print(h_input);
 
 
 
+    }
+
+    void Intrication()
+    {
+        //mettre des paliers pour changer les sprites
     }
     void GetInput()
     {
