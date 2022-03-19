@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LineRenderer _lineRenderer;
 
     private LevelManager _levelManager;
+    private GameObject _companion;
+    private PlayerIntrication _playerIntrication;
     private Tile[] _tiles;
     private Tilemap _tilemap;
     private Grid _mapGrid;
@@ -28,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
         _tilemap = _levelManager.Tilemap;
         _mapGrid = _levelManager.MapGrid;
         _camera = Camera.main;
+        _playerIntrication = GetComponent<PlayerIntrication>();
+        _companion = _playerIntrication.Companion;
+
     }
 
     private void Awake()
@@ -49,8 +54,15 @@ public class PlayerMovement : MonoBehaviour
         GetInput();
         if (time >= tempo)
         {
+            if (_playerIntrication.IsDead)
+            {
+                DeplacementDead(new Vector2Int(h_input, v_input));
+            }
+            else
+            {
+                Deplacement(new Vector2Int(h_input, v_input));
+            }
             
-            Deplacement(new Vector2Int(h_input, v_input));
             time = time % tempo;
             h_input = 0;
             v_input = 0;
@@ -102,6 +114,24 @@ public class PlayerMovement : MonoBehaviour
             v_input = 0;
         }
     }
+
+    private void DeplacementDead(Vector2Int input)
+    {
+        Vector3Int cellPosition = _mapGrid.WorldToCell(transform.position);
+        float distanceFromCompanion = (transform.position - _companion.transform.position).magnitude;
+        float newDistanceFromCompanion = (transform.position + input.x * Vector3.right + input.y * Vector3.up - _companion.transform.position).magnitude;
+
+        if (newDistanceFromCompanion <= distanceFromCompanion)
+        {
+            transform.Translate(input.x, input.y, 0);
+            StopAllCoroutines();
+            StartCoroutine(MoveCamera());
+            if (newDistanceFromCompanion <= 0.001)
+                _playerIntrication.Revive();
+        }
+
+    }
+
     void Deplacement(Vector2Int input)
     {
         Vector3Int cellPosition = _mapGrid.WorldToCell(transform.position);
@@ -181,7 +211,6 @@ public class PlayerMovement : MonoBehaviour
         float distance = direction.magnitude;
         float oldDistance = distance;
 
-        Debug.Log("Hey " + distance);
         while (distance >= 0.0001 && oldDistance >= distance)
         {
             _camera.transform.Translate(directionNormalized * _cameraVelocity * Time.deltaTime);
