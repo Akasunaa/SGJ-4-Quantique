@@ -5,11 +5,13 @@ using UnityEngine.Tilemaps;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] float _cameraVelocity = 1f;
+
     private LevelManager _levelManager;
     private Tile[] _tiles;
     private Tilemap _tilemap;
     private Grid _mapGrid;
-
+    private Camera _camera;
     private Rigidbody2D rb;
     private float speed = 10;
     private int h_input;
@@ -24,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         _tiles = _levelManager.Tiles;
         _tilemap = _levelManager.Tilemap;
         _mapGrid = _levelManager.MapGrid;
+        _camera = Camera.main;
     }
 
     // Start is called before the first frame update
@@ -89,20 +92,24 @@ public class PlayerMovement : MonoBehaviour
         Vector3Int cellPosition = _mapGrid.WorldToCell(transform.position);
         Tile tile = (Tile) _tilemap.GetTile(new Vector3Int(cellPosition.x + h_input, cellPosition.y + v_input, cellPosition.z));
         if (tile != _tiles[1])
+        {
+            StartCoroutine(MoveCamera(new Vector2Int(h_input, v_input)));
             transform.Translate(h_input, v_input, 0);
+        }
+            
             
         //rb.velocity = new Vector2(h_input, v_input).normalized * speed;
 
     }
 
-    private IEnumerator FreezePlayer(float time)
+    private IEnumerator MoveCamera(Vector2Int input)
     {
-        for(; ; )
+        Vector2 move = input;
+
+        while (move.magnitude >= 0.0001)
         {
-            canMove = false;
-            yield return new WaitForSeconds(time);
-            canMove = true;
-            yield return new WaitForSeconds(time);
+            //_camera.transform.Translate();
+            yield return new WaitForEndOfFrame();
         }
         
     }
