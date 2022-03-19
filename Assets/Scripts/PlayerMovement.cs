@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     float v_input;
     bool canMove;
     float time;
-    float tempo=1;
+    float tempo=1f;
     // Start is called before the first frame update
     void Start()
     {
