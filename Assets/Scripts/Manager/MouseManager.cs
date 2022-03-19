@@ -5,17 +5,22 @@ using UnityEngine.Tilemaps;
 
 public class MouseManager : MonoBehaviour
 {
-    [SerializeField] Tilemap _tilemap;
-    [SerializeField] Grid _mapGrid;
-    // Tiles 0 to 3 are for the first zone
-    // Tiles 4 to 7 are for the second zone
-    // Tiles 8 to 11 are for the third
-    [SerializeField] Tile[] _tiles;
-    [SerializeField] Sprite[] _tilesSprite;
+   
+    private Grid _mapGrid;
+    /* Tiles 0 to 3 are for the first zone
+     Tiles 4 to 7 are for the second zone
+     Tiles 8 to 11 are for the third */
+    private Tile[] _tiles;
+    private Tilemap _tilemap;
     private bool _isGroundWallBasis = true;
+    private LevelManager _levelManager;
 
-    private void Awake()
+    private void OnEnable()
     {
+        _levelManager = FindObjectOfType<LevelManager>();
+        _tiles = _levelManager.Tiles;
+        _tilemap = _levelManager.Tilemap;
+        _mapGrid = _levelManager.MapGrid;
     }
 
     // Start is called before the first frame update
@@ -41,31 +46,22 @@ public class MouseManager : MonoBehaviour
         positionOnGrid = _mapGrid.WorldToCell(transform.position);
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log(_isGroundWallBasis);
-            for (int i = 0; i <= 1; i++)
+            Vector3Int cellToMeasure = new Vector3Int(positionOnGrid.x, positionOnGrid.y, positionOnGrid.z);
+            Tile measuredTile = (Tile)_tilemap.GetTile(cellToMeasure);
+            if (!_isGroundWallBasis && (measuredTile == _tiles[0] || measuredTile == _tiles[1]))
             {
-                for (int j = 0; j <= 1; j++)
-                {
-                    Vector3Int cellToMeasure = new Vector3Int(positionOnGrid.x + i, positionOnGrid.y + j, positionOnGrid.z);
-                    Tile measuredTile = (Tile)_tilemap.GetTile(cellToMeasure);
-                    if (!_isGroundWallBasis && (measuredTile == _tiles[0] || measuredTile == _tiles[1]))
-                    {
-                        if (Random.Range(0, 2) == 0)
-                            _tilemap.SetTile(cellToMeasure, _tiles[2]);
-                        else
-                            _tilemap.SetTile(cellToMeasure, _tiles[3]);
-                    }
-                    else if (_isGroundWallBasis && (measuredTile == _tiles[2] || measuredTile == _tiles[3]))
-                    {
-                        if (Random.Range(0, 2) == 0)
-                            _tilemap.SetTile(cellToMeasure, _tiles[0]);
-                        else
-                            _tilemap.SetTile(cellToMeasure, _tiles[1]);
-                    }
-                }
+                if (Random.Range(0, 2) == 0)
+                    _tilemap.SetTile(cellToMeasure, _tiles[2]);
+                else
+                    _tilemap.SetTile(cellToMeasure, _tiles[3]);
             }
-            
-            //_tilemap.SetTile(_mapGrid.WorldToCell(transform.position), _tile);
+            else if (_isGroundWallBasis && (measuredTile == _tiles[2] || measuredTile == _tiles[3]))
+            {
+                if (Random.Range(0, 2) == 0)
+                    _tilemap.SetTile(cellToMeasure, _tiles[0]);
+                else
+                    _tilemap.SetTile(cellToMeasure, _tiles[1]);
+            }
         }
     }
 
