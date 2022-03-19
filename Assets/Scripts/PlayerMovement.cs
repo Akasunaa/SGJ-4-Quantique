@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     float v_input;
     bool canMove;
     float time;
+    float tempo=1;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +23,13 @@ public class PlayerMovement : MonoBehaviour
     {
         time = time + Time.deltaTime;
         GetInput();
-        if (time >= 1)
+        if (time >= tempo)
         {
             
             Deplacement();
             h_input = 0;
             v_input = 0;
-            time = time % 1;
+            time = time % tempo;
         }
              
         //GetInput();
