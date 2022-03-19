@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     bool canMove;
     float time;
     float tempo=1f;
+    float intrication = 1;
     // Start is called before the first frame update
     void Start()
     {
