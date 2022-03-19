@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float _cameraVelocity = 1f;
+    [SerializeField] LineRenderer _lineRenderer;
 
     private LevelManager _levelManager;
     private Tile[] _tiles;
@@ -49,7 +50,11 @@ public class PlayerMovement : MonoBehaviour
             h_input = 0;
             v_input = 0;
         }
+        else if (h_input != 0 || v_input != 0)
+        {
 
+        }
+       
         //GetInput();
         //Deplacement();
 
