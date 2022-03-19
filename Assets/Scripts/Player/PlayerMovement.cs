@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _lineRenderer.positionCount = 0;
         time = time + Time.deltaTime;
         GetInput();
         if (time >= tempo)
@@ -52,7 +53,13 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (h_input != 0 || v_input != 0)
         {
+            Vector3 possibleTranslation = new Vector3(h_input, v_input, 0f);
 
+            _lineRenderer.positionCount = 4;
+            _lineRenderer.SetPosition(0, transform.position + possibleTranslation + Vector3.left * 0.5f + Vector3.up * 0.5f);
+            _lineRenderer.SetPosition(1, transform.position + possibleTranslation + Vector3.right * 0.5f + Vector3.up * 0.5f);
+            _lineRenderer.SetPosition(2, transform.position + possibleTranslation + Vector3.right * 0.5f + Vector3.down * 0.5f);
+            _lineRenderer.SetPosition(3, transform.position + possibleTranslation + Vector3.left * 0.5f + Vector3.down * 0.5f);
         }
        
         //GetInput();
