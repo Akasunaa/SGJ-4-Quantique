@@ -46,7 +46,8 @@ public class Ennemy1: MonoBehaviour
         {
             transform.Translate(switchOrientation, 0, 1);
         }
-        else {
+        else 
+        {
             transform.Translate(0, switchOrientation, 1);
         }
         
