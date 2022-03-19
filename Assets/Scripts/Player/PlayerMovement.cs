@@ -125,6 +125,46 @@ public class PlayerMovement : MonoBehaviour
             {
                 Deplacement(-input);
             }
+            else if (tile == _tiles[4])
+            {
+                transform.Translate(input.x, input.y, 0);
+                StopAllCoroutines();
+                StartCoroutine(MoveCamera());
+            }
+            else if (tile == _tiles[6])
+            {
+                transform.Translate(input.x, input.y, 0);
+                StopAllCoroutines();
+                StartCoroutine(MoveCamera());
+                Deplacement(input);
+            }
+            else if (tile == _tiles[7])
+            {
+                Deplacement(-input);
+            }
+            else if (tile == _tiles[8])
+            {
+                transform.Translate(input.x, input.y, 0);
+                StopAllCoroutines();
+                StartCoroutine(MoveCamera());
+            }
+            else if (tile == _tiles[10])
+            {
+                transform.Translate(input.x, input.y, 0);
+                StopAllCoroutines();
+                StartCoroutine(MoveCamera());
+                Deplacement(input);
+            }
+            else if (tile == _tiles[11])
+            {
+                Deplacement(-input);
+            }
+            else if (tile == _tiles[12])
+            {
+                transform.Translate(input.x, input.y, 0);
+                StopAllCoroutines();
+                StartCoroutine(MoveCamera());
+            }
         }
 
             
@@ -154,7 +194,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void ChangeTempo(int nbZone)
     {
-        tempo = nbZone;
+        if (nbZone == 1)
+        {
+            tempo = 1;
+        }
+        else if (nbZone == 2)
+        {
+            tempo = 0.5f;
+        }
+        else if (nbZone == 3)
+        {
+            tempo = 0.25f;
+        }
+        else if (nbZone == 4)
+        {
+            tempo = 0.1f;
+        }
     }
 
     private void OnDestroy()

@@ -27,12 +27,15 @@ public class LevelManager : MonoBehaviour
             Debug.LogError("No grid specified");
 
         Zone.NewZone += ChangeAudio;
+        Zone.NewZone += IsWinning;
+            
 
     }
 
     private void OnDestroy()
     {
         Zone.NewZone -= ChangeAudio;
+        Zone.NewZone += IsWinning;
     }
 
     private void ChangeAudio(int nbZone)
@@ -43,6 +46,14 @@ public class LevelManager : MonoBehaviour
         }
         audioSources[nbZone-1].Play();
         
+    }
+
+    private void IsWinning(int nbZone)
+    {
+        if (nbZone == 4)
+        {
+            print("youpi en fait");
+        }
     }
 
 

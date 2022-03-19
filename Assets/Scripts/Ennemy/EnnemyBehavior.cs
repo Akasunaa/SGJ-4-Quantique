@@ -38,7 +38,7 @@ public class EnnemyBehavior : MonoBehaviour
 
     void ChangeTempo(int nbZone)
     {
-        //changesmth
+        //rahoui je vais coder ça
     }
 
 }
