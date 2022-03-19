@@ -73,6 +73,35 @@ public class MouseManager : MonoBehaviour
                     else
                         _tilemap.SetTile(cellToMeasure, _tiles[1]);
                 }
+                else if (_isGroundWallBasis && (measuredTile == _tiles[4] || measuredTile == _tiles[5]))
+                {
+                    if (Random.Range(0, 2) == 0)
+                        _tilemap.SetTile(cellToMeasure, _tiles[6]);
+                    else
+                        _tilemap.SetTile(cellToMeasure, _tiles[7]);
+                }
+                else if (_isGroundWallBasis && (measuredTile == _tiles[6] || measuredTile == _tiles[7]))
+                {
+                    if (Random.Range(0, 2) == 0)
+                        _tilemap.SetTile(cellToMeasure, _tiles[4]);
+                    else
+                        _tilemap.SetTile(cellToMeasure, _tiles[5]);
+                }
+                else if (_isGroundWallBasis && (measuredTile == _tiles[8] || measuredTile == _tiles[9]))
+                {
+                    if (Random.Range(0, 2) == 0)
+                        _tilemap.SetTile(cellToMeasure, _tiles[10]);
+                    else
+                        _tilemap.SetTile(cellToMeasure, _tiles[11]);
+                }
+                else if (_isGroundWallBasis && (measuredTile == _tiles[10] || measuredTile == _tiles[11]))
+                {
+                    if (Random.Range(0, 2) == 0)
+                        _tilemap.SetTile(cellToMeasure, _tiles[8]);
+                    else
+                        _tilemap.SetTile(cellToMeasure, _tiles[9]);
+                }
+
 
             }
 

@@ -78,25 +78,25 @@ public class PlayerMovement : MonoBehaviour
     }
     void GetInput()
     {
-        if (Input.GetKey(KeyCode.Z))
+        if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.UpArrow))
         {
             v_input = 1;
             h_input = 0;
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             v_input = -1;
             h_input = 0;
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             h_input = 1;
             v_input = 0;
         }
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.LeftArrow))
         {
             h_input = -1;
             v_input = 0;
