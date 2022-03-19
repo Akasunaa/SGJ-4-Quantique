@@ -15,6 +15,6 @@ public class PlayerIntrication : MonoBehaviour
     void Update()
     {
         //todo: cooldown
-        print(intrication);
+        //print(intrication);
     }
 }
