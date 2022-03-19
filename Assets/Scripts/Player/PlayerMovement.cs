@@ -91,10 +91,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3Int cellPosition = _mapGrid.WorldToCell(transform.position);
         Tile tile = (Tile) _tilemap.GetTile(new Vector3Int(cellPosition.x + h_input, cellPosition.y + v_input, cellPosition.z));
-        if (tile != _tiles[1])
+        if (tile != _tiles[1] && (h_input != 0 || v_input != 0))
         {
-            StartCoroutine(MoveCamera(new Vector2Int(h_input, v_input)));
             transform.Translate(h_input, v_input, 0);
+            StartCoroutine(MoveCamera());
         }
             
             
@@ -102,15 +102,19 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private IEnumerator MoveCamera(Vector2Int input)
+    private IEnumerator MoveCamera()
     {
-        Vector2 move = input;
+        Vector3 directionTemp = (transform.position - _camera.transform.position);
+        Vector3 direction = new Vector3(directionTemp.x, directionTemp.y, 0f);
+        float distance = direction.magnitude;
 
-        while (move.magnitude >= 0.0001)
+        Debug.Log("Hey " + distance);
+        while (distance >= 0.0001)
         {
-            //_camera.transform.Translate();
+            _camera.transform.Translate(direction * _cameraVelocity * Time.deltaTime);
+            distance = distance - _cameraVelocity * Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
-        
+      
     }
 }
