@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
              
         //GetInput();
         //Deplacement();
-        print(h_input);
+        //print(h_input);
 
 
 
