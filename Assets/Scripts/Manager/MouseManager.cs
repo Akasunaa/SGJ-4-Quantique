@@ -36,7 +36,6 @@ public class MouseManager : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Camera.main.nearClipPlane;
         transform.position = Camera.main.ScreenToWorldPoint(mousePos);
-
     }
 
     public void GetInput()

@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Tile[] _tiles;
     [SerializeField] Tilemap _tilemap;
     [SerializeField] Grid _mapGrid;
+    [SerializeField] AudioSource[] audioSources; 
 
     public Tile[] Tiles { get { return (_tiles); } }
     public Tilemap Tilemap { get { return (_tilemap); } }
@@ -24,5 +25,25 @@ public class LevelManager : MonoBehaviour
             Debug.LogError("No tilemap specified");
         if (_mapGrid == null)
             Debug.LogError("No grid specified");
+
+        Zone.NewZone += ChangeAudio;
+
     }
+
+    private void OnDestroy()
+    {
+        Zone.NewZone -= ChangeAudio;
+    }
+
+    private void ChangeAudio(int nbZone)
+    {
+        for (int i=0; i < audioSources.Length; i++)
+        {
+            audioSources[i].Pause();
+        }
+        audioSources[nbZone-1].Play();
+        
+    }
+
+
 }

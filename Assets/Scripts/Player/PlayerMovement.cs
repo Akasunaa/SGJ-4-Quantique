@@ -26,11 +26,15 @@ public class PlayerMovement : MonoBehaviour
         _mapGrid = _levelManager.MapGrid;
     }
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        Zone.NewZone += ChangeTempo;
+    }
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         //StartCoroutine(FreezePlayer(time));
+        
     }
 
     // Update is called once per frame
@@ -49,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
 
         //GetInput();
         //Deplacement();
-
 
 
     }
@@ -105,5 +108,15 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(time);
         }
         
+    }
+
+    private void ChangeTempo(int nbZone)
+    {
+        tempo = nbZone;
+    }
+
+    private void OnDestroy()
+    {
+        Zone.NewZone -= ChangeTempo;
     }
 }
