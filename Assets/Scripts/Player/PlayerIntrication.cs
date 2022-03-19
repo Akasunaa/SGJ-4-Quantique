@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerIntrication : MonoBehaviour
 {
-    public int intrication=100;
+    public int intrication = 100;
     // Start is called before the first frame update
     void Start()
     {
