@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         if (time >= tempo)
         {
             
-            Deplacement();
+            Deplacement(new Vector2Int(h_input, v_input));
             time = time % tempo;
             h_input = 0;
             v_input = 0;
@@ -99,15 +99,31 @@ public class PlayerMovement : MonoBehaviour
             v_input = 0;
         }
     }
-    void Deplacement()
+    void Deplacement(Vector2Int input)
     {
         Vector3Int cellPosition = _mapGrid.WorldToCell(transform.position);
-        Tile tile = (Tile) _tilemap.GetTile(new Vector3Int(cellPosition.x + h_input, cellPosition.y + v_input, cellPosition.z));
-        if (tile != _tiles[1] && (h_input != 0 || v_input != 0))
+        Tile tile = (Tile) _tilemap.GetTile(new Vector3Int(cellPosition.x + input.x, cellPosition.y + input.y, cellPosition.z));
+        if (input != Vector2Int.zero)
         {
-            transform.Translate(h_input, v_input, 0);
-            StartCoroutine(MoveCamera());
+            if (tile == _tiles[0])
+            {
+                transform.Translate(input.x, input.y, 0);
+                StopAllCoroutines();
+                StartCoroutine(MoveCamera());
+            }
+            else if (tile == _tiles[2])
+            {
+                transform.Translate(input.x, input.y, 0);
+                StopAllCoroutines();
+                StartCoroutine(MoveCamera());
+                Deplacement(input);
+            }
+            else if (tile == _tiles[3])
+            {
+                Deplacement(-input);
+            }
         }
+
             
             
         //rb.velocity = new Vector2(h_input, v_input).normalized * speed;
@@ -117,13 +133,16 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator MoveCamera()
     {
         Vector3 directionTemp = (transform.position - _camera.transform.position);
-        Vector3 direction = new Vector3(directionTemp.x, directionTemp.y, 0f);
+        Vector3 direction = (new Vector3(directionTemp.x, directionTemp.y, 0f));
+        Vector3 directionNormalized = direction.normalized;
         float distance = direction.magnitude;
+        float oldDistance = distance;
 
         Debug.Log("Hey " + distance);
-        while (distance >= 0.0001)
+        while (distance >= 0.0001 && oldDistance >= distance)
         {
-            _camera.transform.Translate(direction * _cameraVelocity * Time.deltaTime);
+            _camera.transform.Translate(directionNormalized * _cameraVelocity * Time.deltaTime);
+            oldDistance = distance;
             distance = distance - _cameraVelocity * Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
