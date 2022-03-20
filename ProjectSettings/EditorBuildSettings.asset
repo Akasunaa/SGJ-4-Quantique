@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 27cc1229a2caea9488e04926e2871aee
   - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: 0aa114963d3e6c247bc4271b9d60fe31
+  - enabled: 0
     path: Assets/Scenes/NouvelleQA.unity
     guid: 06ec684a705ef3e48b530a1a1890c7d7
   - enabled: 1
