@@ -20,10 +20,11 @@ public class Click : MonoBehaviour
 
     public void Echap()
     {
-        for(int i = 0; i < cartes.Length; i++)
-        {
-            cartes[i].SetActive(false);
-        }
+        Debug.Log("HEY");
+        //for(int i = 0; i < cartes.Length; i++)
+        //{
+        //    cartes[i].SetActive(false);
+        //}
     }
 
     public void Carte1()
@@ -50,5 +51,24 @@ public class Click : MonoBehaviour
     {
         cartes[5].SetActive(true);
     }
+
+    public void Carte7()
+    {
+        cartes[6].SetActive(true);
+    }
+
+
+    public void Carte8()
+    {
+        cartes[7].SetActive(true);
+    }
+
+
+    public void Carte9()
+    {
+        cartes[8].SetActive(true);
+    }
+
+
 }
 
