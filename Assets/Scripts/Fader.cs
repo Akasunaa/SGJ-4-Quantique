@@ -33,7 +33,6 @@ public class Fader : MonoBehaviour
 
         while (spriteRendererColor.a < 1)
         {
-            print(spriteRendererColor.a);
             spriteRendererColor = gameObject.GetComponent<Image>().color;
             spriteRendererColor.a += Time.unscaledDeltaTime / time;
             gameObject.GetComponent<Image>().color = spriteRendererColor;
