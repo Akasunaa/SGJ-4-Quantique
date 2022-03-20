@@ -266,10 +266,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PersoSeul
       objectReference: {fileID: 0}
-    - target: {fileID: 3624953830542307918, guid: 8cf20a18dc50f3346b3822981509c531, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cf20a18dc50f3346b3822981509c531, type: 3}
 --- !u!4 &3492106339357759022 stripped
@@ -289,6 +285,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1608713461509605744}
     m_Modifications:
+    - target: {fileID: 123370588366054196, guid: 0389fff01b698ac4d953c7a96f3f0c7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1917321621584630883, guid: 0389fff01b698ac4d953c7a96f3f0c7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2240552392546212968, guid: 0389fff01b698ac4d953c7a96f3f0c7a, type: 3}
       propertyPath: m_Name
       value: Perso
