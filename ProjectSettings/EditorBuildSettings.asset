@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneQA.unity
     guid: a819e599737fd9441a9fb799b8ca476a
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 27cc1229a2caea9488e04926e2871aee
+  - enabled: 1
     path: Assets/Scenes/NouvelleQA.unity
     guid: 06ec684a705ef3e48b530a1a1890c7d7
   m_configObjects: {}
