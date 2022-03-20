@@ -123,7 +123,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3976777536735381119}
         m_TargetAssemblyTypeName: Click, Assembly-CSharp
-        m_MethodName: OnClick
+        m_MethodName: Carte5
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -616,7 +616,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3976777536735381119}
         m_TargetAssemblyTypeName: Click, Assembly-CSharp
-        m_MethodName: OnClick
+        m_MethodName: Carte3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -852,7 +852,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3976777536735381119}
         m_TargetAssemblyTypeName: Click, Assembly-CSharp
-        m_MethodName: OnClick
+        m_MethodName: Carte4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -985,7 +985,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3976777536735381119}
         m_TargetAssemblyTypeName: Click, Assembly-CSharp
-        m_MethodName: OnClick
+        m_MethodName: Carte1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1118,7 +1118,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3976777536735381119}
         m_TargetAssemblyTypeName: Click, Assembly-CSharp
-        m_MethodName: OnClick
+        m_MethodName: Carte6
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1776,6 +1776,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a61b41668cd4dd4788a67713abc6ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cartes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &3976777536777659803
 GameObject:
   m_ObjectHideFlags: 0
@@ -6740,7 +6744,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3976777536735381119}
         m_TargetAssemblyTypeName: Click, Assembly-CSharp
-        m_MethodName: OnClick
+        m_MethodName: Carte2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
