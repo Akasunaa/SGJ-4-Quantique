@@ -19,20 +19,20 @@ public class ToggleScript : MonoBehaviour
 
         if (isOn)
         {
-            block.disabledColor = new Color(1f, 0f, 0f);
-            block.highlightedColor = new Color(1f, 0f, 0f);
-            block.normalColor = new Color(1f, 0f, 0f);
-            block.pressedColor = new Color(1f, 0f, 0f);
-            block.selectedColor = new Color(1f, 0f, 0f);
+            block.disabledColor = new Color(0f, 0.9215686f, 1f);
+            block.highlightedColor = new Color(0f, 0.9215686f, 1f);
+            block.normalColor = new Color(0f, 0.9215686f, 1f);
+            block.pressedColor = new Color(0f, 0.9215686f, 1f);
+            block.selectedColor = new Color(0f, 0.9215686f, 1f);
             _toggle.colors = block;
         }
         else
         {
-            block.disabledColor = new Color(0.4528302f, 0f, 0f);
-            block.highlightedColor = new Color(0.4528302f, 0f, 0f);
-            block.normalColor = new Color(0.4528302f, 0f, 0f);
-            block.pressedColor = new Color(0.4528302f, 0f, 0f);
-            block.selectedColor = new Color(0.4528302f, 0f, 0f);
+            block.disabledColor = new Color(0.1658063f, 0.4055467f, 0.509434f);
+            block.highlightedColor = new Color(0.1658063f, 0.4055467f, 0.509434f);
+            block.normalColor = new Color(0.1658063f, 0.4055467f, 0.509434f);
+            block.pressedColor = new Color(0.1658063f, 0.4055467f, 0.509434f);
+            block.selectedColor = new Color(0.1658063f, 0.4055467f, 0.509434f);
             _toggle.colors = block;
 
         }
