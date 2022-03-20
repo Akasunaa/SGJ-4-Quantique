@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3660592773766390005
+--- !u!1 &5291442069847281462
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,68 +8,53 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3660592773766390002}
-  - component: {fileID: 3660592773766390004}
-  - component: {fileID: -1200976530285965350}
-  - component: {fileID: 4489417956666857745}
+  - component: {fileID: 5291442069847281457}
+  - component: {fileID: 1510593771560132633}
+  - component: {fileID: 5039086963606976210}
+  - component: {fileID: 8821156431449579914}
   m_Layer: 0
-  m_Name: Ennemy1
+  m_Name: EnemyTata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3660592773766390002
+--- !u!4 &5291442069847281457
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3660592773766390005}
+  m_GameObject: {fileID: 5291442069847281462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.12, y: 0, z: 0}
+  m_LocalPosition: {x: -1.5, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6105112951073648004}
+  - {fileID: 3394100983731225159}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3660592773766390004
+--- !u!114 &1510593771560132633
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3660592773766390005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5d2d8e6bfcd6bc45ad36465ddbb7a55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nbOfCase: 0
-  orientation: 0
---- !u!114 &-1200976530285965350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3660592773766390005}
+  m_GameObject: {fileID: 5291442069847281462}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4d64fb1919f64a45a7628e010a00384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  tempo: 1
---- !u!61 &4489417956666857745
+--- !u!61 &5039086963606976210
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3660592773766390005}
+  m_GameObject: {fileID: 5291442069847281462}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -89,12 +74,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
---- !u!1001 &3442934737622167480
+--- !u!114 &8821156431449579914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5291442069847281462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7064db127cb95d4185a0f6dec4a23cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nbOfCase: 0
+  orientation: 0
+  _boxCollider2D: {fileID: 5039086963606976210}
+  tempo: 1
+--- !u!1001 &6081040210666799227
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3660592773766390002}
+    m_TransformParent: {fileID: 5291442069847281457}
     m_Modifications:
     - target: {fileID: 8747409943466712942, guid: 8a875082a029e4141bb28a0a56bb0df6, type: 3}
       propertyPath: m_Name
@@ -146,8 +147,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a875082a029e4141bb28a0a56bb0df6, type: 3}
---- !u!4 &6105112951073648004 stripped
+--- !u!4 &3394100983731225159 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8898678586634125884, guid: 8a875082a029e4141bb28a0a56bb0df6, type: 3}
-  m_PrefabInstance: {fileID: 3442934737622167480}
+  m_PrefabInstance: {fileID: 6081040210666799227}
   m_PrefabAsset: {fileID: 0}
