@@ -23,8 +23,10 @@ public class Fader : MonoBehaviour
     }
     private void Win()
     {
-        StartCoroutine(FadeOut(4));
-            
+        StartCoroutine(TransitionToScene(2, 4));
+
+
+
     }
 
     public IEnumerator FadeOut(float time)

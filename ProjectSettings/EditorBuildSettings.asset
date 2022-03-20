@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NouvelleQA.unity
     guid: 06ec684a705ef3e48b530a1a1890c7d7
+  - enabled: 1
+    path: Assets/Scenes/Fin.unity
+    guid: fe1d1537aa3c41a4e84ab2b566d934da
   m_configObjects: {}
