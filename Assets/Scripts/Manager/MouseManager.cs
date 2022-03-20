@@ -19,6 +19,13 @@ public class MouseManager : MonoBehaviour
     private Tilemap _tilemap;
     private bool _isGroundWallBasis = false;
     private LevelManager _levelManager;
+    private bool _shouldClick = false;
+    private LineRenderer _lineRenderer;
+
+    private void Awake()
+    {
+        _lineRenderer = GetComponent<LineRenderer>();
+    }
 
     private void OnEnable()
     {
@@ -26,6 +33,7 @@ public class MouseManager : MonoBehaviour
         _tiles = _levelManager.Tiles;
         _tilemap = _levelManager.Tilemap;
         _mapGrid = _levelManager.MapGrid;
+        Zone.NewZone += ZoneChange;
     }
 
     // Start is called before the first frame update
@@ -37,10 +45,15 @@ public class MouseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetInput();
+        if (_shouldClick)
+        {
+            GetInput();
+        }
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Camera.main.nearClipPlane;
         transform.position = Camera.main.ScreenToWorldPoint(mousePos);
+
+
     }
 
     public void GetInput()
@@ -48,6 +61,11 @@ public class MouseManager : MonoBehaviour
         Vector3Int positionOnGrid;
 
         positionOnGrid = _mapGrid.WorldToCell(transform.position);
+        _lineRenderer.positionCount = 4;
+        _lineRenderer.SetPosition(0, positionOnGrid  + Vector3.up * 1f);
+        _lineRenderer.SetPosition(1, positionOnGrid + Vector3.right * 1f + Vector3.up * 1);
+        _lineRenderer.SetPosition(2, positionOnGrid + Vector3.right * 1f);
+        _lineRenderer.SetPosition(3, positionOnGrid);
         if (Input.GetMouseButtonDown(0))
         {
             List<RaycastResult> results = new List<RaycastResult>();
@@ -106,6 +124,12 @@ public class MouseManager : MonoBehaviour
             }
 
         }
+    }
+
+    public void ZoneChange(int value)
+    {
+        if (value == 2)
+            _shouldClick = true;
     }
 
     public void ChangeBasis(bool isGroundWall)
