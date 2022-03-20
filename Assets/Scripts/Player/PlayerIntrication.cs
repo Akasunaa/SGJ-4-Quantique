@@ -8,7 +8,8 @@ public class PlayerIntrication : MonoBehaviour
     [SerializeField] GameObject _companion;
     [SerializeField] GameObject _player;
     [SerializeField] LineRenderer _deathLink;
-
+    [SerializeField] int _maxIntrication = 90;
+    
     private Animator[] _animators;
     private LevelManager _levelManager;
     private Grid _gridMap;
@@ -23,7 +24,7 @@ public class PlayerIntrication : MonoBehaviour
     private void Awake()
     {
         _animators = GetComponentsInChildren<Animator>();
-
+        _intrication = _maxIntrication;
     }
 
     private void OnEnable()
@@ -55,7 +56,7 @@ public class PlayerIntrication : MonoBehaviour
         }    
     }
 
-    private void Die()
+    public void Die()
     {
         IsDead = true;
         _deathLink.positionCount = 2;
@@ -80,6 +81,6 @@ public class PlayerIntrication : MonoBehaviour
         _player.SetActive(true);
         _playerSeul.SetActive(false);
         _companion.SetActive(false);
-        _intrication = 90;
+        _intrication = _maxIntrication;
     }
 }
