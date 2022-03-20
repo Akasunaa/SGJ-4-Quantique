@@ -10,9 +10,17 @@ public class Zone : MonoBehaviour
 
     public static event Action<int> NewZone;
     public static event Action<int> WinningZone;
-    void Start()
+    void Awake()
     {
         _levelManager = FindObjectOfType<LevelManager>();
+    }
+
+    private void Start()
+    {
+        if (nbZone == 1)
+        {
+            NewZone?.Invoke(nbZone);
+        }
     }
 
     // Update is called once per frame
@@ -28,5 +36,14 @@ public class Zone : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         NewZone?.Invoke(nbZone);
+    }
+
+    private void OnStayEnter2D(Collider2D collision)
+    {
+        if (nbZone == 1)
+        {
+            NewZone?.Invoke(nbZone);
+        }
+        
     }
 }

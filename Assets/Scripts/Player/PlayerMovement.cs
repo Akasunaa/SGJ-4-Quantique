@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody2D>();
         //StartCoroutine(FreezePlayer(time));
+        tempo = 1;
         
     }
 

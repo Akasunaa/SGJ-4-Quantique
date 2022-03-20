@@ -35,6 +35,10 @@ public class LevelManager : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        audioSources[0].Play();
+    }
     private void OnDestroy()
     {
         Zone.NewZone -= ChangeAudio;
