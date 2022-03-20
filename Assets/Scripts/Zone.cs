@@ -35,7 +35,7 @@ public class Zone : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        NewZone?.Invoke(nbZone);
+        //NewZone?.Invoke(nbZone);
     }
 
     private void OnStayEnter2D(Collider2D collision)

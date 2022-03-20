@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float _cameraVelocity = 1f;
     [SerializeField] LineRenderer _lineRenderer;
 
+
     private LevelManager _levelManager;
     private GameObject _companion;
     private PlayerIntrication _playerIntrication;
@@ -37,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+
         Zone.NewZone += ChangeTempo;
     }
     void Start()
@@ -125,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
         if (newDistanceFromCompanion <= distanceFromCompanion)
         {
             transform.Translate(input.x, input.y, 0);
+            _playerIntrication.DeathLink.SetPosition(0, transform.position);
             StopAllCoroutines();
             StartCoroutine(MoveCamera());
             if (newDistanceFromCompanion <= 0.001)
@@ -227,18 +230,26 @@ public class PlayerMovement : MonoBehaviour
         if (nbZone == 1)
         {
             tempo = 1;
+            _cameraVelocity = 2f;
         }
         else if (nbZone == 2)
         {
-            tempo = 0.5f;
+            tempo = 0.50f;
+            _cameraVelocity = 3f;
         }
         else if (nbZone == 3)
         {
-            tempo = 0.25f;
+            tempo = 0.33f;
+            _cameraVelocity = 4f;
         }
         else if (nbZone == 4)
         {
             tempo = 0.1f;
+            _cameraVelocity = 20f;
+        }
+        else if (nbZone == 5)
+        {
+            tempo = 3600f;
         }
     }
 

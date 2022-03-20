@@ -47,12 +47,16 @@ public class LevelManager : MonoBehaviour
 
     private void ChangeAudio(int nbZone)
     {
-        for (int i=0; i < audioSources.Length; i++)
+        if (nbZone != 5)
         {
-            audioSources[i].Pause();
+            for (int i = 0; i < audioSources.Length; i++)
+            {
+                audioSources[i].Stop();
+            }
+            audioSources[nbZone - 1].Play();
+
         }
-        audioSources[nbZone-1].Play();
-        
+
     }
 
     private void IsWinning(int nbZone)
