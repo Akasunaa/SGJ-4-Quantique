@@ -48,7 +48,7 @@ public class Card : MonoBehaviour
         //Activer le canva mesure ca va pas être simple
     }
 
-    void Win()
+    public void Win()
     {
         print("win");
         //deux cartes à faire
