@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,12 @@ public class PlayerIntrication : MonoBehaviour
     private Grid _gridMap;
     private int _intrication = 90;
     private Vector3 offset = new Vector3(0.5f, 0.5f, 0f);
-    // Start is called before the first frame update
+
+    private bool firstTimeHit = false;
+    private bool firstTimeDecorrele = false;
+    public static event Action CardProba;
+    public static event Action CardDecorrele;
+
 
     public LineRenderer DeathLink { get { return (_deathLink); } }
     public bool IsDead { get; set; } = false;
@@ -35,6 +41,11 @@ public class PlayerIntrication : MonoBehaviour
 
     public void LoseIntrication()
     {
+        if (firstTimeHit == false)
+        {
+            firstTimeHit = true;
+            CardProba?.Invoke();
+        }
         _intrication -= 30;
         foreach (Animator animator in _animators)
         {
@@ -58,6 +69,12 @@ public class PlayerIntrication : MonoBehaviour
 
     public void Die()
     {
+        if (firstTimeDecorrele == false)
+        {
+            firstTimeDecorrele = true;
+            CardDecorrele?.Invoke();
+
+        }
         IsDead = true;
         _deathLink.positionCount = 2;
 

@@ -10,6 +10,11 @@ public class Zone : MonoBehaviour
 
     public static event Action<int> NewZone;
     public static event Action<int> WinningZone;
+    public static event Action CardGainEnergie;
+    public static event Action CardWin;
+
+    private bool firstTimeQuitlvl1 = false;
+    private bool firstTimeQuitlvl3 = false;
     void Awake()
     {
         _levelManager = FindObjectOfType<LevelManager>();
@@ -32,6 +37,22 @@ public class Zone : MonoBehaviour
     {
         NewZone?.Invoke(nbZone+1);
         WinningZone?.Invoke(nbZone + 1);
+        if (nbZone == 1)
+        {
+            if (firstTimeQuitlvl1 == false)
+            {
+                firstTimeQuitlvl1 = true;
+                CardGainEnergie?.Invoke();
+            }
+        }
+        else if (nbZone == 3)
+        {
+            if (firstTimeQuitlvl3 == false)
+            {
+                firstTimeQuitlvl3 = true;
+                CardWin?.Invoke();
+            }
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
