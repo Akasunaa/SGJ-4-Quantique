@@ -11,7 +11,7 @@ public class EnemyTata : MonoBehaviour
     int count = 0;
     [SerializeField]int tempo = 1;
     float time;
-    int switchOrientation=1;
+    int switchOrientation = 1;
     private Collider2D _playerCollider;
     private PlayerIntrication _playerIntrication;
     private bool _justMoved = false;

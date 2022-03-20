@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ennemy4 : MonoBehaviour
+public class Ennemy4 : Enemy
 {
 
     [SerializeField] int nbOfCase;
     [SerializeField] Orientation orientation;
     int count = 0;
-    [SerializeField] int tempo = 1;
-    float time;
     int switchOrientation = 1;
     float rotation;
 
@@ -20,7 +18,7 @@ public class Ennemy4 : MonoBehaviour
     }
     void Start()
     {
-        if (Random.Range(0, 1) == 0)
+        if (Random.Range(0, 2) == 0)
         {
             rotation = 22.5f;
         }
@@ -30,20 +28,8 @@ public class Ennemy4 : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        time = time + Time.deltaTime;
-        if (time >= tempo)
-        {
 
-            Deplacement();
-            Rotation();
-            time = time % tempo;
-        }
-    }
-
-    void Deplacement()
+    public override void Deplacement()
     {
         count += 1;
         if (count >= nbOfCase)
@@ -53,13 +39,13 @@ public class Ennemy4 : MonoBehaviour
         }
         if (orientation == Orientation.Horizontale)
         {
-            transform.Translate(switchOrientation, 0, 1);
+            DeplacementWithTile(new Vector2Int(switchOrientation, 0));
         }
         else
         {
-            transform.Translate(0, switchOrientation, 1);
+            DeplacementWithTile(new Vector2Int(0, switchOrientation));
         }
-
+        //Rotation();
     }
 
     void Rotation()
