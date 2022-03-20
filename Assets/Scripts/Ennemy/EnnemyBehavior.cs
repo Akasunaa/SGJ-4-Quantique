@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnnemyBehavior : MonoBehaviour
 {
     [SerializeField] int damage;
-    [SerializeField] int tempo = 1;
+    [SerializeField] float tempo = 1;
 
     private float time;
     private Collider2D _playerCollider;
@@ -64,22 +64,18 @@ public class EnnemyBehavior : MonoBehaviour
         if (nbZone == 1)
         {
             tempo = 1;
-            _cameraVelocity = 2f;
         }
         else if (nbZone == 2)
         {
             tempo = 0.50f;
-            _cameraVelocity = 3f;
         }
         else if (nbZone == 3)
         {
             tempo = 0.33f;
-            _cameraVelocity = 4f;
         }
         else if (nbZone == 4)
         {
             tempo = 0.1f;
-            _cameraVelocity = 20f;
         }
         else if (nbZone == 5)
         {
