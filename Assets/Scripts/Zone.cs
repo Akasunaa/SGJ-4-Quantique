@@ -9,6 +9,7 @@ public class Zone : MonoBehaviour
     private LevelManager _levelManager;
 
     public static event Action<int> NewZone;
+    public static event Action<int> WinningZone;
     void Start()
     {
         _levelManager = FindObjectOfType<LevelManager>();
@@ -22,6 +23,7 @@ public class Zone : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         NewZone?.Invoke(nbZone+1);
+        WinningZone?.Invoke(nbZone + 1);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

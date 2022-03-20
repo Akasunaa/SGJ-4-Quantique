@@ -181,7 +181,6 @@ public class PlayerMovement : MonoBehaviour
         float distance = direction.magnitude;
         float oldDistance = distance;
 
-        Debug.Log("Hey " + distance);
         while (distance >= 0.0001 && oldDistance >= distance)
         {
             _camera.transform.Translate(directionNormalized * _cameraVelocity * Time.deltaTime);

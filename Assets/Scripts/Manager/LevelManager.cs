@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Tile[] _tiles;
     [SerializeField] Tilemap _tilemap;
     [SerializeField] Grid _mapGrid;
-    [SerializeField] AudioSource[] audioSources; 
+    [SerializeField] AudioSource[] audioSources;
+
+    public static event Action Win;
 
     public Tile[] Tiles { get { return (_tiles); } }
     public Tilemap Tilemap { get { return (_tilemap); } }
@@ -27,7 +30,7 @@ public class LevelManager : MonoBehaviour
             Debug.LogError("No grid specified");
 
         Zone.NewZone += ChangeAudio;
-        Zone.NewZone += IsWinning;
+        Zone.WinningZone += IsWinning;
             
 
     }
@@ -35,7 +38,7 @@ public class LevelManager : MonoBehaviour
     private void OnDestroy()
     {
         Zone.NewZone -= ChangeAudio;
-        Zone.NewZone += IsWinning;
+        Zone.WinningZone -= IsWinning;
     }
 
     private void ChangeAudio(int nbZone)
@@ -52,7 +55,8 @@ public class LevelManager : MonoBehaviour
     {
         if (nbZone == 4)
         {
-            print("youpi en fait");
+            Win?.Invoke();
+            print("je win les gars");
         }
     }
 

@@ -120786,7 +120786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8492202607656370361, guid: 289f506c8096e9e4b92f8d907839956a, type: 3}
       propertyPath: m_Radius
-      value: 40
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 289f506c8096e9e4b92f8d907839956a, type: 3}
@@ -120862,6 +120862,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4088296821377243592, guid: b5a1cf8238229424bafc9c3b2d76d33b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 18baf6dccbd050e429bee3ce01969d51, type: 3}
     - target: {fileID: 8647859718724987025, guid: b5a1cf8238229424bafc9c3b2d76d33b, type: 3}
       propertyPath: _mapGrid
       value: 
