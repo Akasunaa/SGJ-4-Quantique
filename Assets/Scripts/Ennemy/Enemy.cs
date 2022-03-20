@@ -21,8 +21,10 @@ public abstract class Enemy : MonoBehaviour
 
     public abstract void Deplacement();
 
-    public void DeplacementWithTile(Vector2Int input)
+    public void DeplacementWithTile(Vector2Int input, int numberOfRecursion = 0)
     {
+        if (numberOfRecursion >= 6)
+            return;
         Vector3Int cellPosition = _mapGrid.WorldToCell(transform.position);
         Tile tile = (Tile)_tilemap.GetTile(new Vector3Int(cellPosition.x + input.x, cellPosition.y + input.y, cellPosition.z));
         if (input != Vector2Int.zero)
@@ -34,11 +36,11 @@ public abstract class Enemy : MonoBehaviour
             else if (tile == _tiles[2])
             {
                 transform.Translate(input.x, input.y, 0);
-                DeplacementWithTile(input);
+                DeplacementWithTile(input, numberOfRecursion + 1);
             }
             else if (tile == _tiles[3])
             {
-                DeplacementWithTile(-input);
+                DeplacementWithTile(-input, numberOfRecursion + 1);
             }
             else if (tile == _tiles[4])
             {
@@ -47,11 +49,11 @@ public abstract class Enemy : MonoBehaviour
             else if (tile == _tiles[6])
             {
                 transform.Translate(input.x, input.y, 0);
-                DeplacementWithTile(input);
+                DeplacementWithTile(input, numberOfRecursion + 1);
             }
             else if (tile == _tiles[7])
             {
-                DeplacementWithTile(-input);
+                DeplacementWithTile(-input, numberOfRecursion + 1);
             }
             else if (tile == _tiles[8])
             {
@@ -60,11 +62,11 @@ public abstract class Enemy : MonoBehaviour
             else if (tile == _tiles[10])
             {
                 transform.Translate(input.x, input.y, 0);
-                DeplacementWithTile(input);
+                DeplacementWithTile(input, numberOfRecursion + 1);
             }
             else if (tile == _tiles[11])
             {
-                DeplacementWithTile(-input);
+                DeplacementWithTile(-input, numberOfRecursion + 1);
             }
             else if (tile == _tiles[12])
             {

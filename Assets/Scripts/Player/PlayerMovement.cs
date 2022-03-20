@@ -136,8 +136,10 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    void Deplacement(Vector2Int input)
+    void Deplacement(Vector2Int input, int numberOfRecursion = 0)
     {
+        if (numberOfRecursion >= 6)
+            return;
         Vector3Int cellPosition = _mapGrid.WorldToCell(transform.position);
         Tile tile = (Tile) _tilemap.GetTile(new Vector3Int(cellPosition.x + input.x, cellPosition.y + input.y, cellPosition.z));
         if (input != Vector2Int.zero)
@@ -153,11 +155,11 @@ public class PlayerMovement : MonoBehaviour
                 transform.Translate(input.x, input.y, 0);
                 StopAllCoroutines();
                 StartCoroutine(MoveCamera());
-                Deplacement(input);
+                Deplacement(input, numberOfRecursion + 1);
             }
             else if (tile == _tiles[3])
             {
-                Deplacement(-input);
+                Deplacement(-input, numberOfRecursion + 1);
             }
             else if (tile == _tiles[4])
             {
@@ -170,11 +172,11 @@ public class PlayerMovement : MonoBehaviour
                 transform.Translate(input.x, input.y, 0);
                 StopAllCoroutines();
                 StartCoroutine(MoveCamera());
-                Deplacement(input);
+                Deplacement(input, numberOfRecursion + 1);
             }
             else if (tile == _tiles[7])
             {
-                Deplacement(-input);
+                Deplacement(-input, numberOfRecursion + 1);
             }
             else if (tile == _tiles[8])
             {
@@ -187,11 +189,11 @@ public class PlayerMovement : MonoBehaviour
                 transform.Translate(input.x, input.y, 0);
                 StopAllCoroutines();
                 StartCoroutine(MoveCamera());
-                Deplacement(input);
+                Deplacement(input, numberOfRecursion + 1);
             }
             else if (tile == _tiles[11])
             {
-                Deplacement(-input);
+                Deplacement(-input, numberOfRecursion + 1);
             }
             else if (tile == _tiles[12])
             {
