@@ -127,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
         if (newDistanceFromCompanion <= distanceFromCompanion)
         {
             transform.Translate(input.x, input.y, 0);
-            _playerIntrication.DeathLink.SetPosition(0, transform.position);
+            //_playerIntrication.DeathLink.SetPosition(0, transform.position);
             StopAllCoroutines();
             StartCoroutine(MoveCamera());
             if (newDistanceFromCompanion <= 0.001)

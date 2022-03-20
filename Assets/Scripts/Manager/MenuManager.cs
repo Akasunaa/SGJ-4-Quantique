@@ -25,7 +25,7 @@ public class MenuManager : MonoBehaviour
     {
         if (_alreadyMetEnemy && !_intrication.IsDead)
         {
-            SceneManager.LoadScene("NouvelleQA");
+            SceneManager.LoadScene("Final");
         }
     }
 
