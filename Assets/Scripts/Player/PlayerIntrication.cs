@@ -76,7 +76,7 @@ public class PlayerIntrication : MonoBehaviour
 
         }
         IsDead = true;
-        _deathLink.positionCount = 2;
+        //_deathLink.positionCount = 2;
 
         _player.SetActive(false);
         _playerSeul.SetActive(true);
@@ -87,13 +87,12 @@ public class PlayerIntrication : MonoBehaviour
         else
             cell = Vector3Int.zero;
         _companion.transform.position = cell + offset;
-        _deathLink.SetPosition(0, _playerSeul.transform.position);
-        _deathLink.SetPosition(1, _companion.transform.position);
+
     }
 
     public void Revive()
     {
-        _deathLink.positionCount = 0;
+        //_deathLink.positionCount = 0;
         IsDead = false;
         _player.SetActive(true);
         _playerSeul.SetActive(false);
