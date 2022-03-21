@@ -876,8 +876,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "L\u2019intrication"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b89b6754832e9844bb9b59bb00a3e34a, type: 2}
-  m_sharedMaterial: {fileID: 4742340633057671423, guid: b89b6754832e9844bb9b59bb00a3e34a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1213,13 +1213,10 @@ MonoBehaviour:
   m_text: "L\u2019intrication est un ph\xE9nom\xE8ne purement quantique. C\u2019est
     une  corr\xE9lation entre deux ou plusieurs objets, c\u2019est-\xE0-dire qu\u2019agir
     sur l\u2019un \u2013 par exemple, effectuer une mesure \u2013, aura une action
-    instantan\xE9e sur les autres. Et ce, quelle que soit la distance qui les s\xE9pare.\r\n\r\nIl
-    n\u2019est pas possible d\u2019utiliser ce ph\xE9nom\xE8ne pour transmettre de
-    l\u2019information car l\u2019information ne peut pas aller plus vite que la
-    vitesse de la lumi\xE8re.\r\n\r\n"
+    instantan\xE9e sur les autres. Et ce, quelle que soit la distance qui les s\xE9pare.\r\n\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b89b6754832e9844bb9b59bb00a3e34a, type: 2}
-  m_sharedMaterial: {fileID: 4742340633057671423, guid: b89b6754832e9844bb9b59bb00a3e34a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1279,7 +1276,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -27.993073, w: -254.32735}
+  m_margin: {x: 0, y: 0, z: -27.993073, w: -145.99312}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1551,8 +1548,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "L\u2019intrication"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b89b6754832e9844bb9b59bb00a3e34a, type: 2}
-  m_sharedMaterial: {fileID: 4742340633057671423, guid: b89b6754832e9844bb9b59bb00a3e34a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
