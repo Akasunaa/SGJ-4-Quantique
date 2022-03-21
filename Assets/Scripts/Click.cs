@@ -69,6 +69,11 @@ public class Click : MonoBehaviour
         cartes[8].SetActive(true);
     }
 
+    public void Carte10()
+    {
+        cartes[9].SetActive(true);
+    }
+
 
 }
 
