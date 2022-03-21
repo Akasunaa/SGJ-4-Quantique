@@ -11,6 +11,9 @@ public class ManagerUI : MonoBehaviour
 
     private GameObject _currentGameplay;
     private GameObject _currentSavoir;
+    private bool _bigCardOpen = false;
+
+    public bool BigCardOpen { get { return (_bigCardOpen); } }
 
     private void OnEnable()
     {
@@ -23,6 +26,7 @@ public class ManagerUI : MonoBehaviour
 
     public void CloseAll()
     {
+        _bigCardOpen = false;
         _backButton.SetActive(false);
         _nerdButton.SetActive(false);
         _happyButton.SetActive(false);
@@ -46,6 +50,7 @@ public class ManagerUI : MonoBehaviour
 
     public void OpenCard(int i)
     {
+        _bigCardOpen = true;
         _nerdButton.SetActive(true);
         _happyButton.SetActive(true);
         cartes[i].SetActive(true);

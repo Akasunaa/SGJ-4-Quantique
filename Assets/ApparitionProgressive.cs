@@ -22,8 +22,9 @@ public class ApparitionProgressive : MonoBehaviour
     public void ZoneChange(int value)
     {
         if (value == 2)
-            plusMoins.SetActive(true);
-        if (value == 3)
             solMur.SetActive(true);
+        if (value == 3)
+            plusMoins.SetActive(true);
+
     }
 }

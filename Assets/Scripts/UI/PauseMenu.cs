@@ -7,11 +7,14 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     [SerializeField] public GameObject cardMenu;
+    private ManagerUI _myUIManager;
 
+    private bool _isCard = false;
     private LevelManager _levelManager;
 
     private void Awake()
     {
+        _myUIManager = cardMenu.GetComponent<ManagerUI>();
         _levelManager = FindObjectOfType<LevelManager>();
     }
 
@@ -20,11 +23,22 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             
-            if (GameIsPaused)
+            if (GameIsPaused && !_isCard)
             {
                 Resume();
             }
-            else
+            else if (GameIsPaused && _isCard && !_myUIManager.BigCardOpen)
+            {
+                _isCard = false;
+                pauseMenuUI.SetActive(true);
+                cardMenu.SetActive(false);
+
+            }
+            else if (GameIsPaused && _isCard && _myUIManager.BigCardOpen)
+            {
+                _myUIManager.CloseAll();
+            }
+            else if (!GameIsPaused)
             {
                 Pause();
             }
@@ -55,6 +69,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Acquis()
     {
+        _isCard = true;
         pauseMenuUI.SetActive(false);
         cardMenu.SetActive(true);
 

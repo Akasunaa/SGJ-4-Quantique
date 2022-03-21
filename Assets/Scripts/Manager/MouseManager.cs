@@ -17,7 +17,7 @@ public class MouseManager : MonoBehaviour
      Tiles 8 to 11 are for the third */
     private Tile[] _tiles;
     private Tilemap _tilemap;
-    private bool _isGroundWallBasis = false;
+    private bool _isGroundWallBasis = true;
     private LevelManager _levelManager;
     private bool _shouldClick = false;
     private LineRenderer _lineRenderer;
