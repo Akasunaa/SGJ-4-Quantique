@@ -214,6 +214,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3856522883935074865, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 651508892}
+    - target: {fileID: 3856522883935074865, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856522883935074865, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1837427729
+      objectReference: {fileID: 0}
     - target: {fileID: 3915634807357930032, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -277,6 +289,50 @@ PrefabInstance:
     - target: {fileID: 5014848825569155505, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}
       propertyPath: m_Name
       value: EndGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556970557794074375, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}
+      propertyPath: m_fontSize
+      value: 61.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556970557794074375, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a9259d875d612e46bc5f8491b870897, type: 2}
+    - target: {fileID: 5556970557794074375, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556970557794074375, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.7028302
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556970557794074375, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.9625998
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556970557794074375, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556970557794074375, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 61.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556970557794074375, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4742340633057671423, guid: 7a9259d875d612e46bc5f8491b870897, type: 2}
+    - target: {fileID: 5556970557794074375, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4289983999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099552757364142419, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 651508892}
+    - target: {fileID: 8099552757364142419, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20317b7fda2b3d74bbb63b112f4a3f54, type: 3}

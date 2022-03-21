@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Promethee.unity
+    path: Assets/Scenes/OldScenes/Promethee.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
-    path: Assets/Scenes/Tata.unity
+    path: Assets/Scenes/OldScenes/Tata.unity
     guid: ca65685c10903cf469fed3b4e1bb4135
   - enabled: 0
-    path: Assets/Scenes/SceneQA.unity
+    path: Assets/Scenes/OldScenes/SceneQA.unity
     guid: a819e599737fd9441a9fb799b8ca476a
   - enabled: 1
     path: Assets/Scenes/Intro.unity
@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Final.unity
     guid: 0aa114963d3e6c247bc4271b9d60fe31
   - enabled: 0
-    path: Assets/Scenes/NouvelleQA.unity
+    path: Assets/Scenes/OldScenes/NouvelleQA.unity
     guid: 06ec684a705ef3e48b530a1a1890c7d7
   - enabled: 1
     path: Assets/Scenes/Fin.unity

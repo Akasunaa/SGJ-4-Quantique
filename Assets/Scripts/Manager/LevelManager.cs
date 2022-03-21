@@ -14,6 +14,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Grid _mapGrid;
     [SerializeField] AudioSource[] audioSources;
 
+    private AudioSource _currentAudioSource;
+
     public static event Action Win;
 
     public Tile[] Tiles { get { return (_tiles); } }
@@ -54,9 +56,19 @@ public class LevelManager : MonoBehaviour
                 audioSources[i].Stop();
             }
             audioSources[nbZone - 1].Play();
-
+            _currentAudioSource = audioSources[nbZone - 1];
         }
 
+    }
+
+    public void PauseMusic()
+    {
+        _currentAudioSource.Pause();
+    }
+
+    public void ResumeMusic()
+    {
+        _currentAudioSource.Play();
     }
 
     private void IsWinning(int nbZone)

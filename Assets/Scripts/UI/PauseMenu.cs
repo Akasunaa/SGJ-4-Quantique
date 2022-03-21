@@ -8,6 +8,12 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     [SerializeField] public GameObject cardMenu;
 
+    private LevelManager _levelManager;
+
+    private void Awake()
+    {
+        _levelManager = FindObjectOfType<LevelManager>();
+    }
 
     void Update()
     {
@@ -27,16 +33,17 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        print("mais");
         pauseMenuUI.SetActive(false);
+        cardMenu.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        _levelManager.ResumeMusic();
     }
 
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
-        cardMenu.SetActive(false);
+        _levelManager.PauseMusic();
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
