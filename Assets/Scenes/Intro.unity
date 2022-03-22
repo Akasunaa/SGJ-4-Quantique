@@ -640,8 +640,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "D\xE9couvre les d\xE9fis de l'intrications quantique. Sort du puit avec
-    ton partenaire en \xE9vitant les particules qui peuvent te d\xE9corr\xE9ler"
+  m_text: "D\xE9couvre les d\xE9fis de l'information quantique !\nSors du puits avec
+    ton partenaire en \xE9vitant les particules qui peuvent te d\xE9corr\xE9ler."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a9259d875d612e46bc5f8491b870897, type: 2}
   m_sharedMaterial: {fileID: 4742340633057671423, guid: 7a9259d875d612e46bc5f8491b870897, type: 2}

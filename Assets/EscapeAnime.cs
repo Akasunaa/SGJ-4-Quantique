@@ -9,10 +9,20 @@ public class EscapeAnime : MonoBehaviour
 
     private void Awake()
     {
-        Zone.NewZone += EventZone;
+        
+        Zone.CardGainEnergie += EventZone;
+        Zone.CardWin += EventZone;
+        Zone.CardWin += EventZone;
     }
 
-    public void EventZone(int nbZone)
+    private void OnDestroy()
+    {
+        Zone.CardGainEnergie -= EventZone;
+        Zone.CardWin -= EventZone;
+        Zone.CardWin -= EventZone;
+    }
+
+    public void EventZone()
     {
         StartCoroutine(FadeOut());
 
