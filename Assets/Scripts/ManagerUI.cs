@@ -21,7 +21,7 @@ public class ManagerUI : MonoBehaviour
 
 
 
-    public bool BigCardOpen { get { return (_bigCardOpen); } }
+    public bool BigCardOpen { get {  return (_bigCardOpen); } set { Debug.Log("Jechange vers " + value); _bigCardOpen = value; } }
 
     private void Awake()
     {
@@ -94,7 +94,7 @@ public class ManagerUI : MonoBehaviour
 
     public void CloseAll()
     {
-        _bigCardOpen = false;
+        BigCardOpen = false;
         _backButton.SetActive(false);
         _nerdButton.SetActive(false);
         _happyButton.SetActive(false);
@@ -158,7 +158,7 @@ public class ManagerUI : MonoBehaviour
 
     public void OpenCard(int i)
     {
-        _bigCardOpen = true;
+        BigCardOpen = true;
         _happyButton.GetComponent<Toggle>().isOn = true;
         _nerdButton.GetComponent<Toggle>().isOn = false;
         _nerdButton.SetActive(true);

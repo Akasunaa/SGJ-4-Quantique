@@ -21,15 +21,15 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.E))
         {
-            
             if (GameIsPaused && !_isCard)
             {
                 Resume();
             }
             else if (GameIsPaused && _isCard && !_myUIManager.BigCardOpen)
             {
+
                 _isCard = false;
                 pauseMenuUI.SetActive(true);
                 cardMenu.SetActive(false);

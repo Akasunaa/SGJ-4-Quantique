@@ -6,6 +6,9 @@ using TMPro;
 public class EscapeAnime : MonoBehaviour
 {
     [SerializeField] TMP_Text _text;
+    [SerializeField] TMP_Text _text2;
+
+    bool _alreadyPrinted = false;
 
     private void Awake()
     {
@@ -13,6 +16,7 @@ public class EscapeAnime : MonoBehaviour
         Zone.CardGainEnergie += EventZone;
         Zone.CardWin += EventZone;
         Zone.CardWin += EventZone;
+        Zone.NewZone += EventClick;
     }
 
     private void OnDestroy()
@@ -20,25 +24,35 @@ public class EscapeAnime : MonoBehaviour
         Zone.CardGainEnergie -= EventZone;
         Zone.CardWin -= EventZone;
         Zone.CardWin -= EventZone;
+        Zone.NewZone -= EventClick;
     }
 
     public void EventZone()
     {
-        StartCoroutine(FadeOut());
-
+        StartCoroutine(FadeOut(_text, 4f));
     }
 
-    private IEnumerator FadeOut()
+    public void EventClick(int zone)
     {
-        _text.gameObject.SetActive(true);
-        while (_text.color.a > 0)
+        Debug.Log("hello " + zone + " " + _alreadyPrinted);
+        if (zone == 2 && !_alreadyPrinted)
+        {
+            _alreadyPrinted = true;
+            StartCoroutine(FadeOut(_text2, 5f));
+        }
+    }
+
+    private IEnumerator FadeOut(TMP_Text text, float time)
+    {
+        text.gameObject.SetActive(true);
+        while (text.color.a > 0)
         {
             
-            _text.color = new Color(_text.color.r, _text.color.g, _text.color.b, _text.color.a - Time.unscaledDeltaTime / 4f);
+            text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a - Time.unscaledDeltaTime / time);
             yield return null;
         }
-        _text.gameObject.SetActive(false);
-        _text.color = new Color(_text.color.r, _text.color.g, _text.color.b, 1f);
+        text.gameObject.SetActive(false);
+        text.color = new Color(text.color.r, text.color.g, text.color.b, 1f);
     }
 
 }

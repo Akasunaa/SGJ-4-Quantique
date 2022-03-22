@@ -18,7 +18,7 @@ public class ApparitionProgressive : MonoBehaviour
         plusMoins.SetActive(false);
         Zone.NewZone += ZoneChange;
     }
-
+     
     public void ZoneChange(int value)
     {
         if (value == 2)
