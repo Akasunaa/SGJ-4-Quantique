@@ -104,23 +104,66 @@ public class ManagerUI : MonoBehaviour
         }
     }
 
-    public void GameplayButton()
+    public void GameplayButton(bool active)
     {
-        _currentSavoir.SetActive(false);
-        _currentGameplay.SetActive(true);
+        ColorBlock block = ColorBlock.defaultColorBlock;
+
+        if (_currentGameplay != null)
+            _currentGameplay.SetActive(active);
+        if (active)
+        {
+            block.disabledColor = new Color(0.7f, 0.7f, 0.7f);
+            block.highlightedColor = new Color(0.7f, 0.7f, 0.7f);
+            block.normalColor = new Color(0.7f, 0.7f, 0.7f);
+            block.pressedColor = new Color(0.7f, 0.7f, 0.7f);
+            block.selectedColor = new Color(0.7f, 0.7f, 0.7f);
+            _happyButton.GetComponent<Toggle>().colors = block;
+        }
+        else
+        {
+            block.disabledColor = new Color(1f, 1f, 1f);
+            block.highlightedColor = new Color(1f, 1f, 1f);
+            block.normalColor = new Color(1f, 1f, 1f);
+            block.pressedColor = new Color(1f, 1f, 1f);
+            block.selectedColor = new Color(1f, 1f, 1f);
+            _happyButton.GetComponent<Toggle>().colors = block;
+        }
     }
 
-    public void SavoirButton()
+    public void SavoirButton(bool active)
     {
-        _currentSavoir.SetActive(true);
-        _currentGameplay.SetActive(false);
+        ColorBlock block = ColorBlock.defaultColorBlock;
+
+        if (_currentSavoir != null)
+           _currentSavoir.SetActive(active);
+        if (active)
+        {
+            block.disabledColor = new Color(0.7f, 0.7f, 0.7f);
+            block.highlightedColor = new Color(0.7f, 0.7f, 0.7f);
+            block.normalColor = new Color(0.7f, 0.7f, 0.7f);
+            block.pressedColor = new Color(0.7f, 0.7f, 0.7f);
+            block.selectedColor = new Color(0.7f, 0.7f, 0.7f);
+            _nerdButton.GetComponent<Toggle>().colors = block;
+        }
+        else
+        {
+            block.disabledColor = new Color(1f, 1f, 1f);
+            block.highlightedColor = new Color(1f, 1f, 1f);
+            block.normalColor = new Color(1f, 1f, 1f);
+            block.pressedColor = new Color(1f, 1f, 1f);
+            block.selectedColor = new Color(1f, 1f, 1f);
+            _nerdButton.GetComponent<Toggle>().colors = block;
+        }
     }
 
     public void OpenCard(int i)
     {
         _bigCardOpen = true;
+        _happyButton.GetComponent<Toggle>().isOn = true;
+        _nerdButton.GetComponent<Toggle>().isOn = false;
         _nerdButton.SetActive(true);
         _happyButton.SetActive(true);
+
         cartes[i].SetActive(true);
         LargeCard card = cartes[i].GetComponent<LargeCard>();
         _currentGameplay = card.Gameplay;
