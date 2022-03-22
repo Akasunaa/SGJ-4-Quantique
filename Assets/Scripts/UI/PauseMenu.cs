@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
     private void Awake()
     {
         _myUIManager = cardMenu.GetComponent<ManagerUI>();
+        cardMenu.SetActive(false);
         _levelManager = FindObjectOfType<LevelManager>();
     }
 
