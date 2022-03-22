@@ -19,4 +19,9 @@ public class Ennemy3 : Enemy
         }
 
     }
+
+    public override void Rotation()
+    {
+        //do nothing
+    }
 }

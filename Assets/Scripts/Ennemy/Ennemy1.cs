@@ -37,4 +37,8 @@ public class Ennemy1: Enemy
         
     }
 
+    public override void Rotation()
+    {
+        //donothing
+    }
 }

@@ -53,6 +53,7 @@ public class EnnemyBehavior : MonoBehaviour
         {
             _justMoved = true;
             _enemy.Deplacement();
+            _enemy.Rotation();
             time = time % tempo;
         }
     }

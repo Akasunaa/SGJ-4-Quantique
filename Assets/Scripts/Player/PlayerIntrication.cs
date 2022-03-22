@@ -22,6 +22,8 @@ public class PlayerIntrication : MonoBehaviour
     public static event Action CardProba;
     public static event Action CardDecorrele;
 
+    [SerializeField] AudioSource audioHit;
+
 
     public LineRenderer DeathLink { get { return (_deathLink); } }
     public bool IsDead { get; set; } = false;
@@ -41,6 +43,7 @@ public class PlayerIntrication : MonoBehaviour
 
     public void LoseIntrication()
     {
+        audioHit.Play();
         if (firstTimeHit == false)
         {
             firstTimeHit = true;

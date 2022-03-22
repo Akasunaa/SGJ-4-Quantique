@@ -20,11 +20,11 @@ public class Ennemy4 : Enemy
     {
         if (Random.Range(0, 2) == 0)
         {
-            rotation = 22.5f;
+            rotation = 90f;
         }
         else
         {
-            rotation = -22.5f;
+            rotation = -90f;
         }
     }
 
@@ -48,9 +48,8 @@ public class Ennemy4 : Enemy
         //Rotation();
     }
 
-    void Rotation()
+    public override void Rotation()
     {
-        transform.rotation *= Quaternion.Euler(0, 0, rotation);
+        RotationWithTile(rotation);
     }
-
 }

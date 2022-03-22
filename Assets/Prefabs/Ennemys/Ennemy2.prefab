@@ -148,9 +148,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7492917669301213952}
     m_Modifications:
+    - target: {fileID: 1764554882119947991, guid: ba1f2e08146124943ba3c2a765a24167, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 2293891951329518690, guid: ba1f2e08146124943ba3c2a765a24167, type: 3}
       propertyPath: m_Name
       value: Ennemi2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442976079014755497, guid: ba1f2e08146124943ba3c2a765a24167, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 5121408722959738351, guid: ba1f2e08146124943ba3c2a765a24167, type: 3}
       propertyPath: m_RootOrder

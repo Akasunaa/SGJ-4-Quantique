@@ -24,6 +24,13 @@ public abstract class Enemy : MonoBehaviour
 
     public abstract void Deplacement();
 
+    public abstract void Rotation();
+
+    public void RotationWithTile(float angle)
+    {
+        transform.Rotate(new Vector3(0, 0, angle), Space.Self);
+    }
+    
     public void DeplacementWithTile(Vector2Int input, int numberOfRecursion = 0)
     {
         float distance = (transform.position - playerIntrication.transform.position).magnitude;

@@ -25,7 +25,7 @@ public class Ennemy2 : Enemy
         if (orientation == 0)
         {
             int sens = Random.Range(-1, 2);
-            DeplacementWithTile(new Vector2Int(0, sens));
+            //DeplacementWithTile(new Vector2Int(0, sens));
         }
         else
         {
@@ -35,9 +35,9 @@ public class Ennemy2 : Enemy
         //Rotation();
     }
 
-    void Rotation()
+    public override void Rotation()
     {
-        transform.rotation *= Quaternion.Euler(0, 0, rotation);
+        RotationWithTile(rotation);
     }
 
 
