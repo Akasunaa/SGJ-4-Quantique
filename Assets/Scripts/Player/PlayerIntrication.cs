@@ -63,7 +63,7 @@ public class PlayerIntrication : MonoBehaviour
                 animator.SetFloat("Blend", previousValue + 1f / 3);
             }
         }
-        if (_intrication <= 0)
+        if (_intrication <= 0 && IsDead == false)
         {
             _intrication = 0;
             Die();
