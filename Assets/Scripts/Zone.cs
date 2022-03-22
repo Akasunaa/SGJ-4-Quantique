@@ -12,9 +12,11 @@ public class Zone : MonoBehaviour
     public static event Action<int> WinningZone;
     public static event Action CardGainEnergie;
     public static event Action CardWin;
+    public static event Action CardBase;
 
     private bool firstTimeQuitlvl1 = false;
     private bool firstTimeQuitlvl3 = false;
+    private bool firstTimeQuitlvl2 = false;
     void Awake()
     {
         _levelManager = FindObjectOfType<LevelManager>();
@@ -43,6 +45,14 @@ public class Zone : MonoBehaviour
             {
                 firstTimeQuitlvl1 = true;
                 CardGainEnergie?.Invoke();
+            }
+        }
+        else if (nbZone == 2)
+        {
+            if (firstTimeQuitlvl2 == false)
+            {
+                firstTimeQuitlvl2 = true;
+                CardBase?.Invoke();
             }
         }
         else if (nbZone == 3)

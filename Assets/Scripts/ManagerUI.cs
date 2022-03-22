@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,16 +12,50 @@ public class ManagerUI : MonoBehaviour
     [SerializeField] GameObject _backButton;
     [SerializeField] GameObject _nerdButton;
     [SerializeField] GameObject _happyButton;
+    [SerializeField] AudioSource audio;
+
 
     private GameObject _currentGameplay;
     private GameObject _currentSavoir;
     private bool _bigCardOpen = false;
 
+
+
     public bool BigCardOpen { get { return (_bigCardOpen); } }
 
     private void Awake()
     {
-        Zone.NewZone += NewZoneEvent;
+        //Zone.NewZone += NewZoneEvent;
+        Zone.CardGainEnergie += GainEnergie;
+        Zone.CardWin += Win;
+        Zone.CardWin += Mesure;
+    }
+
+    private void OnDestroy()
+    {
+        Zone.CardGainEnergie -= GainEnergie;
+        Zone.CardWin -= Win;
+        Zone.CardWin -= Mesure;
+    }
+
+    private void Mesure()
+    {
+        _miniCartes[2].SetActive(true);//base de mesure
+        _miniCartesButton[2].GetComponent<Button>().interactable = true;
+    }
+    private void Win()
+    {
+        _miniCartes[3].SetActive(true); //la meca quantique
+        _miniCartesButton[3].GetComponent<Button>().interactable = true;
+    }
+
+    private void GainEnergie()
+    {
+        audio.Play();
+        _miniCartes[0].SetActive(true); //gain denergie
+        _miniCartes[1].SetActive(true); //mesure
+        _miniCartesButton[0].GetComponent<Button>().interactable = true;
+        _miniCartesButton[1].GetComponent<Button>().interactable = true;
     }
 
     private void OnEnable()
@@ -31,9 +66,11 @@ public class ManagerUI : MonoBehaviour
             carte.SetActive(false);
         }
     }
-
+    /*
     public void NewZoneEvent(int nbZone)
     {
+        //audio.Play();
+        print("a");
         if (nbZone == 2)
         {
             _miniCartes[0].SetActive(true);
@@ -51,7 +88,9 @@ public class ManagerUI : MonoBehaviour
             _miniCartes[3].SetActive(true);
             _miniCartesButton[3].GetComponent<Button>().interactable = true;
         }
+
     }
+    */
 
     public void CloseAll()
     {
