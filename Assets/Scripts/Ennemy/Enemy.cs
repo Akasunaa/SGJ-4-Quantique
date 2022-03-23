@@ -10,10 +10,12 @@ public abstract class Enemy : MonoBehaviour
     private Tilemap _tilemap;
     private Grid _mapGrid;
     private PlayerIntrication playerIntrication;
+    private Transform _ennemyToRotate;
 
     private void OnEnable()
     {
         _levelManager = FindObjectOfType<LevelManager>();
+        _ennemyToRotate = transform.GetChild(0);
         _tiles = _levelManager.Tiles;
         _tilemap = _levelManager.Tilemap;
         _mapGrid = _levelManager.MapGrid;
@@ -28,7 +30,7 @@ public abstract class Enemy : MonoBehaviour
 
     public void RotationWithTile(float angle)
     {
-        transform.Rotate(new Vector3(0, 0, angle), Space.Self);
+        _ennemyToRotate.Rotate(new Vector3(0, 0, angle), Space.Self);
     }
     
     public void DeplacementWithTile(Vector2Int input, int numberOfRecursion = 0)

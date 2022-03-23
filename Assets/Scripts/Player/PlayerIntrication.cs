@@ -43,7 +43,8 @@ public class PlayerIntrication : MonoBehaviour
 
     public void LoseIntrication()
     {
-        audioHit.Play();
+        if (IsDead == false)
+            audioHit.Play();
         if (firstTimeHit == false)
         {
             firstTimeHit = true;

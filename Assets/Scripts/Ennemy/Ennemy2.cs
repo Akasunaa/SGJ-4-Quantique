@@ -10,11 +10,11 @@ public class Ennemy2 : Enemy
     {
         if (Random.Range(0, 2) == 0)
         {
-            rotation = 45f;
+            rotation = 90f;
         }
         else
         {
-            rotation = -45f;
+            rotation = -90f;
         }
     }
 

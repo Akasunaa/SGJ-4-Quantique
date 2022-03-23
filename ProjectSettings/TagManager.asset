@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Perso
   - Electron
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -120166,6 +120166,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5161110319099627618, guid: 9721e9dfec7f7964d8180a59838c86eb, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5599757595312119186, guid: 9721e9dfec7f7964d8180a59838c86eb, type: 3}
       propertyPath: m_SortingOrder
       value: 8
