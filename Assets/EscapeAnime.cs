@@ -34,7 +34,6 @@ public class EscapeAnime : MonoBehaviour
 
     public void EventClick(int zone)
     {
-        Debug.Log("hello " + zone + " " + _alreadyPrinted);
         if (zone == 2 && !_alreadyPrinted)
         {
             _alreadyPrinted = true;

@@ -29,7 +29,7 @@ public class ToggleScript : MonoBehaviour
         else
         {
             block.disabledColor = new Color(0.1658063f, 0.4055467f, 0.509434f);
-            block.highlightedColor = new Color(0.1658063f, 0.4055467f, 0.509434f);
+            block.highlightedColor = new Color(0f, 1f, 1f);
             block.normalColor = new Color(0.1658063f, 0.4055467f, 0.509434f);
             block.pressedColor = new Color(0.1658063f, 0.4055467f, 0.509434f);
             block.selectedColor = new Color(0.1658063f, 0.4055467f, 0.509434f);
