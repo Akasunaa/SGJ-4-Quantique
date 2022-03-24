@@ -1184,8 +1184,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.7382, y: 61}
-  m_SizeDelta: {x: 245.3213, y: 50}
+  m_AnchoredPosition: {x: 6.7387, y: -232}
+  m_SizeDelta: {x: 291.9831, y: 318.3049}
   m_Pivot: {x: 0.5230792, y: -0.08505647}
 --- !u!222 &1522708413547503876
 CanvasRenderer:
@@ -1217,9 +1217,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Le qubit est l\u2019analogue quantique du bit, la plus petite unit\xE9
     de mesure de l\u2019information. Si le bit peut prendre seulement deux valeurs
-    \u2013 0 et 1 \u2013, le qubit peut-\xEAtre dans une superposition de 0 et de
-    1.\r\nC\u2019est \xE0 dire, qu\u2019il va \xEAtre 0 ou 1 de mani\xE8re probabiliste
-    quand on va le regarder.\r\n"
+    \u2013 0 et 1 \u2013, le qubit peut, quant \xE0 lui, \xEAtre dans une superposition
+    de 0 et de 1.\r\nC\u2019est \xE0 dire, qu\u2019il va \xEAtre 0 ou 1 de mani\xE8re
+    probabiliste quand on va le regarder.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75fc7dd55f5812c4cbd365a353bf6a62, type: 2}
   m_sharedMaterial: {fileID: 4742340633057671423, guid: 75fc7dd55f5812c4cbd365a353bf6a62, type: 2}
@@ -1282,7 +1282,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -27.993073, w: -254.32735}
+  m_margin: {x: 0, y: 0, z: 5.0589294, w: 0.36786655}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5889,7 +5889,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "L\u2019intrication est fragile ! Interagir avec les autres particules
-    dans l\u2019environnement d\xE9corr\xE9le petit \xE0 petit des particules intriqu\xE9s.
+    dans l\u2019environnement d\xE9corr\xE9le petit \xE0 petit des particules intriqu\xE9es.
     Un des d\xE9fis de l\u2019information quantique aujourd\u2019hui est de prot\xE9ger
     cette intrication."
   m_isRightToLeft: 0
@@ -6541,7 +6541,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "L\u2019information quantique a de nombreuses applications en termes de
-    s\xE9curit\xE9 des communications. Par exemple, par la distribution de cl\xE9s
+    s\xE9curit\xE9 des communications.\n\nPar exemple, par la distribution de cl\xE9s
     s\xE9curis\xE9es, ce qui int\xE9resse \xE9norm\xE9ment les banques et l\u2019arm\xE9e,
     \xE9videmment.\r\n"
   m_isRightToLeft: 0
@@ -17983,7 +17983,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.8912945, y: 105}
+  m_AnchoredPosition: {x: -12.791, y: 103}
   m_SizeDelta: {x: 245.3213, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6744201182020332675
@@ -18018,8 +18018,7 @@ MonoBehaviour:
     puits de potentiel.  Les niveaux d\u2019\xE9nergie accessibles \xE0 une particule
     dans le puits ne sont pas continues, celle-ci progresse donc \xE9tape par \xE9tape.
     Quand une particule a suffisamment d\u2019\xE9nergie, elle sort du puits. Elle
-    est dite libre !\r\n\r\nPour faire gagner de l\u2019\xE9nergie \xE0 la particule,
-    on envoie un laser.\r\n\r\n"
+    est dite libre !\r\n\n\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75fc7dd55f5812c4cbd365a353bf6a62, type: 2}
   m_sharedMaterial: {fileID: 4742340633057671423, guid: 75fc7dd55f5812c4cbd365a353bf6a62, type: 2}
@@ -18046,8 +18045,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.4
-  m_fontSizeBase: 23.4
+  m_fontSize: 23.2
+  m_fontSizeBase: 23.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -19033,8 +19032,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "C\u2019est un objet \xE9voluant dans l\u2019infiniment petit sur lesquels
-    on travaille dans plusieurs domaines de la physique dont la quantique."
+  m_text: "Une particule est un objet \xE9voluant dans l\u2019infiniment petit sur
+    lequel on travaille dans plusieurs domaines de la physique dont la quantique."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 75fc7dd55f5812c4cbd365a353bf6a62, type: 2}
   m_sharedMaterial: {fileID: 4742340633057671423, guid: 75fc7dd55f5812c4cbd365a353bf6a62, type: 2}
