@@ -28,7 +28,7 @@ public class ManagerUI : MonoBehaviour
         //Zone.NewZone += NewZoneEvent;
         Zone.CardGainEnergie += GainEnergie;
         Zone.CardWin += Win;
-        Zone.CardWin += Mesure;
+        Zone.CardBase += Mesure;
     }
 
     private void OnDestroy()
@@ -40,12 +40,15 @@ public class ManagerUI : MonoBehaviour
 
     private void Mesure()
     {
-        _miniCartes[2].SetActive(true);//base de mesure
-        _miniCartesButton[2].GetComponent<Button>().interactable = true;
+        _miniCartes[3].SetActive(true); //Puit De potentiel
+        _miniCartesButton[3].GetComponent<Button>().interactable = true;
     }
+
     private void Win()
     {
-        _miniCartes[3].SetActive(true); //la meca quantique
+        _miniCartes[4].SetActive(true); //phyquantique
+        _miniCartesButton[3].GetComponent<Button>().interactable = true;
+        _miniCartes[4].SetActive(true); //Info Quantique
         _miniCartesButton[3].GetComponent<Button>().interactable = true;
     }
 
@@ -56,6 +59,9 @@ public class ManagerUI : MonoBehaviour
         _miniCartes[1].SetActive(true); //mesure
         _miniCartesButton[0].GetComponent<Button>().interactable = true;
         _miniCartesButton[1].GetComponent<Button>().interactable = true;
+        _miniCartes[2].SetActive(true);//base de mesure
+        _miniCartesButton[2].GetComponent<Button>().interactable = true;
+
     }
 
     private void OnEnable()

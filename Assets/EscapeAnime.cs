@@ -15,16 +15,14 @@ public class EscapeAnime : MonoBehaviour
         
         Zone.CardGainEnergie += EventZone;
         Zone.CardWin += EventZone;
-        Zone.CardWin += EventZone;
-        Zone.NewZone += EventClick;
+        Zone.CardBase += EventZone;
     }
 
     private void OnDestroy()
     {
         Zone.CardGainEnergie -= EventZone;
         Zone.CardWin -= EventZone;
-        Zone.CardWin -= EventZone;
-        Zone.NewZone -= EventClick;
+        Zone.CardBase -= EventZone;
     }
 
     public void EventZone()
@@ -32,14 +30,7 @@ public class EscapeAnime : MonoBehaviour
         StartCoroutine(FadeOut(_text, 4f));
     }
 
-    public void EventClick(int zone)
-    {
-        if (zone == 2 && !_alreadyPrinted)
-        {
-            _alreadyPrinted = true;
-            StartCoroutine(FadeOut(_text2, 5f));
-        }
-    }
+
 
     private IEnumerator FadeOut(TMP_Text text, float time)
     {

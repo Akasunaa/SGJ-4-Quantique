@@ -49,16 +49,20 @@ public class Zone : MonoBehaviour
         }
         else if (nbZone == 2)
         {
+            Debug.Log("Test 2");
             if (firstTimeQuitlvl2 == false)
             {
+                Debug.Log("Test  2 Résussi");
                 firstTimeQuitlvl2 = true;
                 CardBase?.Invoke();
             }
         }
         else if (nbZone == 3)
         {
+            Debug.Log("Test");
             if (firstTimeQuitlvl3 == false)
             {
+                Debug.Log("Test Résussi");
                 firstTimeQuitlvl3 = true;
                 CardWin?.Invoke();
             }

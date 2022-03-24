@@ -30,9 +30,7 @@ public class PauseMenu : MonoBehaviour
             else if (GameIsPaused && _isCard && !_myUIManager.BigCardOpen)
             {
 
-                _isCard = false;
-                pauseMenuUI.SetActive(true);
-                cardMenu.SetActive(false);
+                CloseCard();
 
             }
             else if (GameIsPaused && _isCard && _myUIManager.BigCardOpen)
@@ -44,6 +42,13 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+    }
+
+    public void CloseCard()
+    {
+        _isCard = false;
+        pauseMenuUI.SetActive(true);
+        cardMenu.SetActive(false);
     }
 
     public void Resume()
