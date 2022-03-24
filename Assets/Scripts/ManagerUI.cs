@@ -112,20 +112,21 @@ public class ManagerUI : MonoBehaviour
             _currentGameplay.SetActive(active);
         if (active)
         {
-            block.disabledColor = new Color(0.7f, 0.7f, 0.7f);
-            block.highlightedColor = new Color(0.7f, 0.7f, 0.7f);
-            block.normalColor = new Color(0.7f, 0.7f, 0.7f);
-            block.pressedColor = new Color(0.7f, 0.7f, 0.7f);
-            block.selectedColor = new Color(0.7f, 0.7f, 0.7f);
+            block.disabledColor = new Color(0.95f, 0.95f, 0.95f);
+            block.highlightedColor = new Color(0.95f, 0.95f, 0.95f);
+            block.normalColor = new Color(0.95f, 0.95f, 0.95f);
+            block.pressedColor = new Color(0.95f, 0.95f, 0.95f);
+            block.selectedColor = new Color(0.95f, 0.95f, 0.95f);
+
             _happyButton.GetComponent<Toggle>().colors = block;
         }
         else
         {
-            block.disabledColor = new Color(1f, 1f, 1f);
+            block.disabledColor = new Color(0.6f, 0.6f, 0.6f);
             block.highlightedColor = new Color(1f, 1f, 1f);
-            block.normalColor = new Color(1f, 1f, 1f);
-            block.pressedColor = new Color(1f, 1f, 1f);
-            block.selectedColor = new Color(1f, 1f, 1f);
+            block.normalColor = new Color(0.6f, 0.6f, 0.6f);
+            block.pressedColor = new Color(0.6f, 0.6f, 0.6f);
+            block.selectedColor = new Color(0.6f, 0.6f, 0.6f);
             _happyButton.GetComponent<Toggle>().colors = block;
         }
     }
@@ -138,20 +139,20 @@ public class ManagerUI : MonoBehaviour
            _currentSavoir.SetActive(active);
         if (active)
         {
-            block.disabledColor = new Color(0.7f, 0.7f, 0.7f);
-            block.highlightedColor = new Color(0.7f, 0.7f, 0.7f);
-            block.normalColor = new Color(0.7f, 0.7f, 0.7f);
-            block.pressedColor = new Color(0.7f, 0.7f, 0.7f);
-            block.selectedColor = new Color(0.7f, 0.7f, 0.7f);
+            block.disabledColor = new Color(0.95f, 0.95f, 0.95f);
+            block.highlightedColor = new Color(0.95f, 0.95f, 0.95f);
+            block.normalColor = new Color(0.95f, 0.95f, 0.95f);
+            block.pressedColor = new Color(0.95f, 0.95f, 0.95f);
+            block.selectedColor = new Color(0.95f, 0.95f, 0.95f);
             _nerdButton.GetComponent<Toggle>().colors = block;
         }
         else
         {
-            block.disabledColor = new Color(1f, 1f, 1f);
+            block.disabledColor = new Color(0.6f, 0.6f, 0.6f);
             block.highlightedColor = new Color(1f, 1f, 1f);
-            block.normalColor = new Color(1f, 1f, 1f);
-            block.pressedColor = new Color(1f, 1f, 1f);
-            block.selectedColor = new Color(1f, 1f, 1f);
+            block.normalColor = new Color(0.6f, 0.6f, 0.6f);
+            block.pressedColor = new Color(0.6f, 0.6f, 0.6f);
+            block.selectedColor = new Color(0.6f, 0.6f, 0.6f);
             _nerdButton.GetComponent<Toggle>().colors = block;
         }
     }
